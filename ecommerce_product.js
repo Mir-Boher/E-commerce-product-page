@@ -17,7 +17,9 @@ const closeBtn = document.querySelector(".close-icon");
 const nextBtn = document.querySelector(".next-icon");
 const previousBtn = document.querySelector(".previous-icon");
 const defaultImg = document.getElementById("big-image-default");
-console.log(nextBtn);
+const navToggle = document.querySelector(".nav-toggle");
+const siteNav = document.querySelector(".site-nav");
+const navLinks = document.getElementById("primary-menu");
 
 // Edits
 let previousImg = inActiveImg[0];
@@ -108,3 +110,21 @@ addToCartBtn.addEventListener("click", () => {
     emptyState.style.display = "none";
   }
 });
+
+// Mobile nav toggle behavior
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const opened = siteNav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", opened ? "true" : "false");
+  });
+
+  // Close menu when a nav link is clicked (mobile UX)
+  if (navLinks) {
+    navLinks.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        siteNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+}

@@ -23,9 +23,9 @@ nav {
   display: flex;
   align-items: center;
   gap: 30px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  height: 101px;
+  height: 64px;
   border-bottom: 1px solid var(--Grayish-blue);
   position: relative;
   margin-bottom: 20px;
@@ -163,6 +163,11 @@ nav ul li a:hover {
 img {
   height: 100%;
   width: 100%;
+}
+
+/* keep toggle hidden by default on larger screens */
+.nav-toggle {
+  display: none;
 }
 main {
   width: 73%;
