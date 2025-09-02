@@ -23,7 +23,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 30px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   height: 64px;
   border-bottom: 1px solid var(--Grayish-blue);
